@@ -1,0 +1,501 @@
+/* 기본 초기화 및 부드러운 스크롤 설정 */
+html {
+    scroll-behavior: smooth; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background-color: #fdfdfb; 
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* 상단 네비게이션 바 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%; 
+    position: fixed;       
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(253, 253, 251, 0.85); 
+    backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(0, 160, 134, 0.08);
+}
+
+.logo {
+    display: flex;         
+    align-items: center;   
+    font-size: 32px;       
+    font-weight: 700;
+    color: #00A086;        
+    letter-spacing: -0.5px;
+}
+
+.logo-img {
+    height: 55px;          
+    width: auto;           
+    margin-right: 16px;    
+    object-fit: contain;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 45px;     
+    font-weight: 500;
+    font-size: 21px;       
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00A086;        
+}
+
+/* 메인 대문 (Hero Section) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 8% 0 8%; 
+    height: 100vh; 
+    background-color: #f0f7f5; 
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 680px;      
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content h1 {
+    font-size: 62px;       
+    color: #112a25;        
+    line-height: 1.35;
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: -1px;  
+}
+
+.hero-content .highlight {
+    color: #00A086;        
+}
+
+.hero-content p {
+    font-size: 23px;       
+    color: #556662;        
+    line-height: 1.7;
+    margin-bottom: 45px;
+}
+
+/* 버튼 스타일 */
+.cta-btn {
+    display: inline-block;
+    padding: 18px 45px;    
+    background-color: #00A086; 
+    color: #fff;
+    text-decoration: none;
+    border-radius: 35px;   
+    font-weight: 500;
+    font-size: 20px;       
+    letter-spacing: -0.2px;
+    box-shadow: 0 6px 20px rgba(0, 160, 134, 0.25); 
+    transition: all 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #00806b; 
+    transform: translateY(-2px); 
+}
+
+/* 대문짝만한 이미지 영역 */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    animation: fadeIn 1.2s ease;
+}
+
+.hero-image img {
+    max-width: 95%;        
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 28px;   
+    box-shadow: 0 25px 50px rgba(0, 160, 134, 0.08); 
+}
+
+/* 공통 헤더 컴포넌트 (About, Product, Partnership 공용) */
+.about-header, .product-header, .partnership-header {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.sub-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #00A086;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.about-header h2, .product-header h2, .partnership-header h2 {
+    font-size: 56px;
+    color: #112a25;
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.bar {
+    width: 80px;
+    height: 6px;
+    background-color: #00A086;
+    margin: 30px auto 0 auto;
+    border-radius: 3px;
+}
+
+/* About Us 섹션 */
+.about {
+    padding: 160px 8%; 
+    background-color: #ffffff;
+}
+
+.about-story {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    margin-bottom: 140px;
+}
+
+.story-text {
+    flex: 1;
+    max-width: 640px;
+}
+
+.story-text h3 {
+    font-size: 38px;
+    color: #112a25;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.story-text .highlight, .p-info .highlight, .partnership-text .highlight {
+    color: #00A086;
+}
+
+.story-text p {
+    font-size: 22px;
+    color: #556662;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.story-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.story-image img {
+    width: 100%;
+    max-width: 580px;
+    height: 420px;
+    object-fit: cover; 
+    border-radius: 28px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+.about-process {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.process-card {
+    flex: 1;
+    background-color: #f0f7f5; 
+    padding: 60px 45px;
+    border-radius: 28px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.process-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0, 160, 134, 0.1);
+}
+
+.card-num {
+    font-size: 26px;
+    font-weight: 700;
+    color: #00A086;
+    margin-bottom: 25px;
+}
+
+.process-card h4 {
+    font-size: 26px;
+    color: #112a25;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.process-card p {
+    font-size: 19px;
+    color: #556662;
+    line-height: 1.65;
+}
+
+/* ==========================================
+   📦 Product 섹션 디자인 (150% 비율 반영)
+   ========================================== */
+.product {
+    padding: 160px 8%;
+    background-color: #fcfbf7; /* 대문 배경과 교차되는 연한 베이지 화이트 */
+    border-top: 1px solid rgba(0, 160, 134, 0.05);
+}
+
+.product-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.product-main {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 28px;
+    gap: 60px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.product-main .p-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-main .p-image img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.product-main .p-info {
+    flex: 1.2;
+}
+
+.p-info h3 {
+    font-size: 38px;
+    color: #112a25;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.p-info p {
+    font-size: 22px;
+    color: #556662;
+    line-height: 1.75;
+}
+
+.product-grid {
+    display: flex;
+    gap: 35px;
+}
+
+.grid-item {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    text-align: center;
+}
+
+.grid-img-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #eef3f1;
+    border: 2px dashed #00A086;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00A086;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.grid-item h4 {
+    font-size: 26px;
+    color: #112a25;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.grid-item p {
+    font-size: 19px;
+    color: #556662;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   🤝 Partnership 섹션 디자인 (3각 네트워크 그래픽)
+   ========================================== */
+.partnership {
+    padding: 160px 8%;
+    background-color: #ffffff;
+}
+
+.partnership-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* 순수 CSS로 구현한 3각 상생 그래픽 */
+.network-graphic {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.center-hub {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background-color: #00A086;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 160, 134, 0.4);
+    z-index: 5;
+}
+
+.node {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 3px solid #00A086;
+    color: #112a25;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    z-index: 5;
+}
+
+/* 3각 꼭짓점 포지셔닝 */
+.node-a { top: 5%; left: 50%; transform: translateX(-50%); }
+.node-b { bottom: 10%; left: 5%; }
+.node-c { bottom: 10%; right: 5%; }
+
+/* 연결선 구조 */
+.line {
+    position: absolute;
+    background-color: rgba(0, 160, 134, 0.2);
+    z-index: 1;
+}
+
+.line-1 { top: 25%; left: 50%; width: 4px; height: 100px; transform: translateX(-50%); }
+.line-2 { top: 60%; left: 25%; width: 130px; height: 4px; transform: rotate(30deg); }
+.line-3 { top: 60%; right: 25%; width: 130px; height: 4px; transform: rotate(-30deg); }
+
+.partnership-text {
+    flex: 1.2;
+    max-width: 620px;
+}
+
+.partnership-text h3 {
+    font-size: 38px;
+    color: #112a25;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.partnership-text p {
+    font-size: 22px;
+    color: #556662;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 반응형 모니터 화면 조정 */
+@media (max-width: 1200px) {
+    .hero-content h1 { font-size: 52px; }
+    .hero-content p { font-size: 20px; }
+    nav a { font-size: 18px; margin-left: 30px; }
+    .logo { font-size: 26px; }
+    
+    .about-header h2, .product-header h2, .partnership-header h2 { font-size: 46px; }
+    .story-text h3, .p-info h3, .partnership-text h3 { font-size: 32px; }
+    .story-text p, .p-info p, .partnership-text p { font-size: 19px; }
+}
+
+/* 스마트폰 화면 반응형 디자인 */
+@media (max-width: 768px) {
+    header { padding: 20px 5%; }
+    .logo { font-size: 22px; }
+    .logo-img { height: 35px; margin-right: 12px; }
+    nav a { margin-left: 15px; font-size: 15px; }
+    
+    .hero {
+        flex-direction: column-reverse; 
+        justify-content: center;
+        padding: 140px 5% 50px 5%;
+        height: auto;
+        text-align: center;
+    }
+    .hero-content { margin-top: 40px; max-width: 100%; }
+    .hero-content h1 { font-size: 36px; }
+    .hero-content p { font-size: 16px; }
+    .hero-image { justify-content: center; width: 100%; }
+    .hero-image img { max-width: 90%; max-height: 40vh; }
+    
+    .about, .product, .partnership { padding: 100px 5%; }
+    .about-header, .product-header, .partnership-header { margin-bottom: 60px; }
+    .about-header h2, .product-header h2, .partnership-header h2 { font-size: 34px; }
+    
+    .about-story, .product-main, .partnership-container { flex-direction: column; gap: 40px; text-align: center; }
+    .story-image, .product-main .p-image { justify-content: center; width: 100%; }
+    .about-process, .product-grid { flex-direction: column; gap: 25px; }
+    
+    .network-graphic { height: 400px; transform: scale(0.85); }
+}
