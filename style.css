@@ -530,53 +530,99 @@ nav a { margin-left: 15px; font-size: 15px; }
 
 }
 
-/* 파트너십 로고 영역 레이아웃 */
-.partner-logo-wrapper {
+/* 파트너십 삼각형 네트워크 컨테이너 */
+.network-triangle-wrapper {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    background: #f9f9f9;
-    padding: 40px;
-    border-radius: 15px;
-}
-
-/* 우리 팀 로고 스타일 */
-.my-team-logo img {
-    height: 60px;
-    object-fit: contain;
-}
-
-/* 협력사 로고 그리드 정렬 (3열 배치) */
-.partner-logo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    position: relative;
     width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1; /* 완벽한 정사각형/원형 비율 유지 */
+    margin: 0 auto;
+    background: #fdfdfd;
+    border-radius: 50%; /* 은은한 원형 테두리 안에서 작동 */
+    border: 1px dashed #e2e8f0;
 }
 
-/* 개별 로고 칸 스타일 */
-.logo-item {
+/* 배경 SVG 선 스타일 */
+.network-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none; /* 마우스 클릭 방해 금지 */
+}
+
+/* 모든 로고 노드 공통 스타일 (동그라미 서클) */
+.center-hub-logo, .partner-node {
+    position: absolute;
     background: #ffffff;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 15px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    border: 2px solid #f1f5f9;
+    z-index: 2;
+    transform: translate(-50%, -50%); /* 중심점 정렬 공식 */
+    transition: all 0.3s ease;
 }
 
-.logo-item img {
-    max-width: 100%;
-    max-height: 100%;
+/* 마우스 올렸을 때 생동감 있는 모션 */
+.center-hub-logo:hover, .partner-node:hover {
+    transform: translate(-50%, -50%) scale(1.08);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+}
+
+/* 1. 센터 허브: 별난정원 (가장 돋보이게 중심 배치) */
+.center-hub-logo {
+    width: 110px;
+    height: 110px;
+    top: 50%;
+    left: 50%;
+    border: 3px solid #4CAF50; /* 브랜드 시그니처 테두리 */
+}
+.center-hub-logo img {
+    width: 70%;
+    height: 70%;
     object-fit: contain;
 }
 
-/* 모바일 화면 대응 */
-@media (max-width: 768px) {
-    .partner-logo-grid {
-        grid-template-columns: repeat(2, 1fr); /* 모바일에선 2열로 변경 */
+/* 2. 서브 협력사 노드 크기 */
+.partner-node {
+    width: 85px;
+    height: 85px;
+}
+.partner-node img {
+    width: 65%;
+    height: 65%;
+    object-fit: contain;
+}
+
+/* 3. 완벽한 삼각형 구도의 좌표 배치 */
+.node-top {
+    top: 15%;
+    left: 50%;
+}
+.node-bottom-left {
+    top: 75%;
+    left: 20%;
+}
+.node-bottom-right {
+    top: 75%;
+    left: 80%;
+}
+
+/* 모바일 화면 대응 (아이폰 등 좁은 화면에서 크기 자동 축소) */
+@media (max-width: 480px) {
+    .center-hub-logo {
+        width: 95px;
+        height: 95px;
+    }
+    .partner-node {
+        width: 75px;
+        height: 75px;
     }
 }
