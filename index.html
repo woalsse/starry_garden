@@ -20,6 +20,7 @@
             <a href="#about">About us</a>
             <a href="#product">Product</a>
             <a href="#partnership">Partnership</a>
+            <a href="#survey">설문조사</a>
         </nav>
     </header>
 
@@ -139,5 +140,106 @@
         </div>
     </section>
 
+    <section id="survey" class="survey">
+        <div class="survey-header">
+            <p class="sub-title">Survey</p>
+            <h2>새로운 시안,<br>여러분의 생각을 들려주세요</h2>
+            <div class="bar"></div>
+            <p class="survey-intro">별난정원이 준비 중인 신제품의 디자인과 가격에 대한 솔직한 의견을 들려주세요.<br>참여해주신 모든 분들 중 추첨을 통해 <span class="highlight">기프티콘</span>을 드립니다.</p>
+        </div>
+
+        <div class="survey-container">
+            <!-- 디자인 시안 미리보기 (실제 시안 이미지가 준비되면 placeholder를 이미지로 교체하세요) -->
+            <div class="survey-design-showcase">
+                <div class="design-option">
+                    <div class="design-img">
+                        <img src="SG_ProductImage1.png" alt="디자인 시안 A">
+                    </div>
+                    <p class="design-label">시안 A</p>
+                </div>
+                <div class="design-option">
+                    <div class="design-img design-img-placeholder">시안 이미지 준비 중</div>
+                    <p class="design-label">시안 B</p>
+                </div>
+                <div class="design-option">
+                    <div class="design-img design-img-placeholder">시안 이미지 준비 중</div>
+                    <p class="design-label">시안 C</p>
+                </div>
+            </div>
+
+            <!-- 제시 가격 -->
+            <div class="survey-price-box">
+                <p class="price-label">예상 판매가</p>
+                <p class="price-value">15,000<span>원</span></p>
+                <p class="price-desc">100% 재활용 소재 · 고체형 영양제 1개 기준</p>
+            </div>
+
+            <form id="survey-form" class="survey-form" novalidate>
+                <div class="form-group">
+                    <label class="form-question">Q1. 위 시안 중 가장 마음에 드는 디자인은 무엇인가요? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="design" value="시안 A" required> 시안 A</label>
+                        <label><input type="radio" name="design" value="시안 B"> 시안 B</label>
+                        <label><input type="radio" name="design" value="시안 C"> 시안 C</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-question">Q2. 15,000원이라면 이 제품을 구매하시겠어요? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="willingness" value="반드시 구매한다" required> 반드시 구매한다</label>
+                        <label><input type="radio" name="willingness" value="구매할 의향이 있다"> 구매할 의향이 있다</label>
+                        <label><input type="radio" name="willingness" value="잘 모르겠다"> 잘 모르겠다</label>
+                        <label><input type="radio" name="willingness" value="구매하지 않을 것 같다"> 구매하지 않을 것 같다</label>
+                        <label><input type="radio" name="willingness" value="절대 구매하지 않는다"> 절대 구매하지 않는다</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-question" for="desired-price">Q3. 어떤 가격이라면 구매하시겠어요? (원 단위로 적어주세요)</label>
+                    <input type="number" id="desired-price" name="desiredPrice" class="text-input" placeholder="예: 12000" min="0" step="500">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-question" for="opinion">Q4. 그 외 하고 싶은 이야기가 있다면 자유롭게 남겨주세요.</label>
+                    <textarea id="opinion" name="opinion" class="text-input" rows="4" placeholder="디자인, 가격, 제품에 대한 의견을 자유롭게 남겨주세요."></textarea>
+                </div>
+
+                <div class="form-divider"></div>
+
+                <p class="gifticon-note">🎁 설문에 참여해주신 분들 중 추첨을 통해 소정의 기프티콘을 드립니다. 당첨자 안내를 위해 아래 정보를 입력해주세요.</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-question" for="respondent-name">이름 <span class="required">*</span></label>
+                        <input type="text" id="respondent-name" name="name" class="text-input" required placeholder="홍길동">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-question" for="respondent-contact">연락처 (전화번호 또는 이메일) <span class="required">*</span></label>
+                        <input type="text" id="respondent-contact" name="contact" class="text-input" required placeholder="010-1234-5678 또는 example@email.com">
+                    </div>
+                </div>
+
+                <div class="privacy-box">
+                    <p class="privacy-title">개인정보 수집 및 이용 동의 (필수)</p>
+                    <div class="privacy-detail">
+                        <p><strong>수집 항목</strong> : 이름, 연락처(전화번호 또는 이메일)</p>
+                        <p><strong>수집 목적</strong> : 설문조사 결과 분석 및 경품(기프티콘) 추첨 · 당첨자 발송 안내</p>
+                        <p><strong>보유 및 이용 기간</strong> : 경품 발송 완료 후 30일 이내 파기</p>
+                        <p>귀하는 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 설문 참여(경품 응모)가 제한될 수 있습니다.</p>
+                    </div>
+                    <label class="consent-check">
+                        <input type="checkbox" id="privacy-consent" name="privacyConsent" required>
+                        위 개인정보 수집 및 이용에 동의합니다. <span class="required">*</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-btn survey-submit-btn">설문 제출하기</button>
+                <p id="survey-status" class="survey-status" role="status"></p>
+            </form>
+        </div>
+    </section>
+
+    <script src="survey.js"></script>
 </body>
 </html>
