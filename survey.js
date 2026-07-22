@@ -14,7 +14,7 @@
  * 못해 CORS 오류가 납니다. 그래서 아래 코드는 text/plain으로 전송하고,
  * Code.gs 쪽에서 JSON.parse(e.postData.contents)로 읽도록 맞춰 두었습니다.
  */
-const SURVEY_ENDPOINT = ""; // TODO: 여기에 Apps Script 웹앱 배포 주소(.../exec)를 입력하세요.
+const SURVEY_ENDPOINT = "https://script.google.com/macros/s/AKfycbyhfFQV9ikmhCPywMOrf9KdLbYPciZ_ZY8VQ32hjbxkf8pNueFot7TvmU15GU0OZHxQ/exec"; // TODO: 여기에 Apps Script 웹앱 배포 주소(.../exec)를 입력하세요.
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("survey-form");
