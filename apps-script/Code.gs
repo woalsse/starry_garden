@@ -12,12 +12,13 @@ function doPost(e) {
     new Date(),
     data.design || "",
     data.designReason || "",
-    data.ecoInfluence || "",
-    data.priorUsage || "",
-    data.usageIntent || "",
-    data.priceRange || "",
-    data.ecoValueWeight || "",
-    data.opinion || "",
+    data.plantCount || "",
+    data.usage || "",
+    data.priceOk || "",
+    data.priceTooLow || "",
+    data.ecoShift || "",
+    data.buyIntent || "",
+    data.freeText || "",
     data.name || "",
     data.contact || "",
     data.privacyConsent || "",
@@ -38,8 +39,9 @@ function getOrCreateSheet_() {
 
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
-      "제출시각", "선호 디자인", "디자인 선택 이유", "친환경 요소 영향", "기존 사용 여부",
-      "신제품 사용 의향", "가격대(100ml)", "친환경 가치 비중", "의견", "이름", "연락처", "개인정보 동의",
+      "제출시각", "선호 시안", "시안 선택 이유", "보유 식물 수", "사용 습관",
+      "합리적 가격대(100ml)", "품질 의심 가격", "친환경 정보 후 변화", "구매 의향",
+      "자유 의견", "이름", "연락처", "개인정보 동의",
     ]);
   }
 
