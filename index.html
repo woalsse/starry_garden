@@ -197,7 +197,37 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-question">Q2. 4,900원이라면 이 제품을 구매하시겠어요? <span class="required">*</span></label>
+                    <label class="form-question">Q2. 그 디자인을 선택한 가장 큰 이유는 무엇인가요? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="designReason" value="디자인이 예쁘고 감각적이라서" required> 디자인이 예쁘고 감각적이라서</label>
+                        <label><input type="radio" name="designReason" value="친환경적인 느낌이 들어서"> 친환경적인 느낌이 들어서</label>
+                        <label><input type="radio" name="designReason" value="정보가 한눈에 잘 보여서"> 정보(사용법 등)가 한눈에 잘 보여서</label>
+                        <label><input type="radio" name="designReason" value="기타"> 기타</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-question">Q3. 이 제품이 해양 생태계 교란종(아무르불가사리)을 재활용해 만든 친환경 제품이라는 점은, 구매 의향에 어떤 영향을 미치나요? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ecoInfluence" value="구매 의향이 크게 높아진다" required> 구매 의향이 크게 높아진다</label>
+                        <label><input type="radio" name="ecoInfluence" value="약간 높아진다"> 약간 높아진다</label>
+                        <label><input type="radio" name="ecoInfluence" value="영향 없다"> 영향 없다</label>
+                        <label><input type="radio" name="ecoInfluence" value="오히려 낮아진다"> 오히려 낮아진다 (예: 원료에 대한 거부감)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-question">Q4. 평소 반려식물용 영양제·비료를 구매해서 사용하시나요? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="priorUsage" value="자주 구매해서 사용한다" required> 자주 구매해서 사용한다</label>
+                        <label><input type="radio" name="priorUsage" value="가끔 구매해서 사용한다"> 가끔 구매해서 사용한다</label>
+                        <label><input type="radio" name="priorUsage" value="사용해본 적 없지만 관심 있다"> 사용해본 적 없지만 관심 있다</label>
+                        <label><input type="radio" name="priorUsage" value="사용해본 적 없고 관심도 없다"> 사용해본 적 없고 관심도 없다</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-question">Q5. 4,900원이라면 이 제품을 구매하시겠어요? <span class="required">*</span></label>
                     <div class="radio-group">
                         <label><input type="radio" name="willingness" value="반드시 구매한다" required> 반드시 구매한다</label>
                         <label><input type="radio" name="willingness" value="구매할 의향이 있다"> 구매할 의향이 있다</label>
@@ -208,12 +238,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-question" for="desired-price">Q3. 어떤 가격이라면 구매하시겠어요? (원 단위로 적어주세요)</label>
+                    <label class="form-question" for="desired-price">Q6. 어떤 가격이라면 구매하시겠어요? (원 단위로 적어주세요)</label>
                     <input type="number" id="desired-price" name="desiredPrice" class="text-input" placeholder="예: 12000" min="0" step="500">
                 </div>
 
                 <div class="form-group">
-                    <label class="form-question" for="opinion">Q4. 그 외 하고 싶은 이야기가 있다면 자유롭게 남겨주세요.</label>
+                    <label class="form-question" for="opinion">Q7. 그 외 하고 싶은 이야기가 있다면 자유롭게 남겨주세요.</label>
                     <textarea id="opinion" name="opinion" class="text-input" rows="4" placeholder="디자인, 가격, 제품에 대한 의견을 자유롭게 남겨주세요."></textarea>
                 </div>
 
