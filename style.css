@@ -650,51 +650,55 @@ nav a { margin-left: 15px; font-size: 15px; }
     margin: 0 auto;
 }
 
-/* 디자인 시안 쇼케이스 */
+/* 디자인 시안 쇼케이스: 쿠팡 상품 상세처럼 하나씩 크게 세로로 스크롤하며 확인 */
 .survey-design-showcase {
+    max-width: 720px;
+    margin: 0 auto 70px auto;
     display: flex;
-    gap: 30px;
-    margin-bottom: 50px;
+    flex-direction: column;
+    gap: 90px;
 }
 
 .design-option {
-    flex: 1;
     text-align: center;
+}
+
+.design-label {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #00A086;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
 }
 
 .design-img {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 4 / 3;
     background-color: #ffffff;
-    border-radius: 24px;
+    border-radius: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
-    margin-bottom: 18px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
 }
 
 .design-img img {
-    max-width: 85%;
-    max-height: 85%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .design-img-placeholder {
     border: 2px dashed #00A086;
     background-color: #eef3f1;
     color: #00A086;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 500;
     text-align: center;
     padding: 20px;
-}
-
-.design-label {
-    font-size: 19px;
-    font-weight: 700;
-    color: #112a25;
 }
 
 /* 제시 가격 박스 */
@@ -893,7 +897,9 @@ nav a { margin-left: 15px; font-size: 15px; }
     .survey { padding: 100px 5%; }
     .survey-header { margin-bottom: 50px; }
     .survey-intro { font-size: 17px; }
-    .survey-design-showcase { flex-direction: column; }
+    .survey-design-showcase { gap: 50px; margin-bottom: 50px; }
+    .design-img { aspect-ratio: 1 / 1; border-radius: 20px; }
+    .design-label { font-size: 17px; margin-bottom: 14px; }
     .survey-form { padding: 35px 22px; }
     .form-row { flex-direction: column; gap: 0; }
     .price-value { font-size: 40px; }
