@@ -675,7 +675,7 @@ nav a { margin-left: 15px; font-size: 15px; }
 
 .design-img {
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 620px;
     background-color: #ffffff;
     border-radius: 28px;
     display: flex;
@@ -686,9 +686,11 @@ nav a { margin-left: 15px; font-size: 15px; }
 }
 
 .design-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 92%;
+    max-height: 92%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .design-img-placeholder {
@@ -898,7 +900,7 @@ nav a { margin-left: 15px; font-size: 15px; }
     .survey-header { margin-bottom: 50px; }
     .survey-intro { font-size: 17px; }
     .survey-design-showcase { gap: 50px; margin-bottom: 50px; }
-    .design-img { aspect-ratio: 1 / 1; border-radius: 20px; }
+    .design-img { height: 380px; border-radius: 20px; }
     .design-label { font-size: 17px; margin-bottom: 14px; }
     .survey-form { padding: 35px 22px; }
     .form-row { flex-direction: column; gap: 0; }
