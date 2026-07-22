@@ -14,8 +14,9 @@ function doPost(e) {
     data.designReason || "",
     data.ecoInfluence || "",
     data.priorUsage || "",
-    data.willingness || "",
-    data.desiredPrice || "",
+    data.usageIntent || "",
+    data.priceRange || "",
+    data.ecoValueWeight || "",
     data.opinion || "",
     data.name || "",
     data.contact || "",
@@ -38,7 +39,7 @@ function getOrCreateSheet_() {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
       "제출시각", "선호 디자인", "디자인 선택 이유", "친환경 요소 영향", "기존 사용 여부",
-      "구매 의향", "희망 가격", "의견", "이름", "연락처", "개인정보 동의",
+      "신제품 사용 의향", "가격대(100ml)", "친환경 가치 비중", "의견", "이름", "연락처", "개인정보 동의",
     ]);
   }
 

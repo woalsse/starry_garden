@@ -197,13 +197,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-question">Q2. 그 디자인을 선택한 가장 큰 이유는 무엇인가요? <span class="required">*</span></label>
-                    <div class="radio-group">
-                        <label><input type="radio" name="designReason" value="디자인이 예쁘고 감각적이라서" required> 디자인이 예쁘고 감각적이라서</label>
-                        <label><input type="radio" name="designReason" value="친환경적인 느낌이 들어서"> 친환경적인 느낌이 들어서</label>
-                        <label><input type="radio" name="designReason" value="정보가 한눈에 잘 보여서"> 정보(사용법 등)가 한눈에 잘 보여서</label>
-                        <label><input type="radio" name="designReason" value="기타"> 기타</label>
-                    </div>
+                    <label class="form-question" for="design-reason">Q2. 그 시안을 선택한 가장 큰 이유는 무엇인가요? <span class="required">*</span></label>
+                    <textarea id="design-reason" name="designReason" class="text-input" rows="3" required placeholder="예: 디자인이 깔끔하고 예뻐서 / 친환경적인 느낌이 들어서 등 자유롭게 적어주세요."></textarea>
                 </div>
 
                 <div class="form-group">
@@ -219,27 +214,55 @@
                 <div class="form-group">
                     <label class="form-question">Q4. 평소 반려식물용 영양제·비료를 구매해서 사용하시나요? <span class="required">*</span></label>
                     <div class="radio-group">
-                        <label><input type="radio" name="priorUsage" value="자주 구매해서 사용한다" required> 자주 구매해서 사용한다</label>
-                        <label><input type="radio" name="priorUsage" value="가끔 구매해서 사용한다"> 가끔 구매해서 사용한다</label>
-                        <label><input type="radio" name="priorUsage" value="사용해본 적 없지만 관심 있다"> 사용해본 적 없지만 관심 있다</label>
-                        <label><input type="radio" name="priorUsage" value="사용해본 적 없고 관심도 없다"> 사용해본 적 없고 관심도 없다</label>
+                        <label><input type="radio" name="priorUsage" value="자주 구매해서 사용한다" data-usage-branch="user" required> 자주 구매해서 사용한다</label>
+                        <label><input type="radio" name="priorUsage" value="가끔 구매해서 사용한다" data-usage-branch="user"> 가끔 구매해서 사용한다</label>
+                        <label><input type="radio" name="priorUsage" value="사용해본 적 없지만 관심 있다" data-usage-branch="non-user"> 사용해본 적 없지만 관심 있다</label>
+                        <label><input type="radio" name="priorUsage" value="사용해본 적 없고 관심도 없다" data-usage-branch="non-user"> 사용해본 적 없고 관심도 없다</label>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="form-question">Q5. 4,900원이라면 이 제품을 구매하시겠어요? <span class="required">*</span></label>
+                <div class="form-group usage-intent-branch" data-branch="user" hidden>
+                    <label class="form-question">Q4-1. (영양제를 사용하실 경우) 선택하신 시안의 제품이 나온다면, 저희 제품을 사용할 의향이 있나요?</label>
                     <div class="radio-group">
-                        <label><input type="radio" name="willingness" value="반드시 구매한다" required> 반드시 구매한다</label>
-                        <label><input type="radio" name="willingness" value="구매할 의향이 있다"> 구매할 의향이 있다</label>
-                        <label><input type="radio" name="willingness" value="잘 모르겠다"> 잘 모르겠다</label>
-                        <label><input type="radio" name="willingness" value="구매하지 않을 것 같다"> 구매하지 않을 것 같다</label>
-                        <label><input type="radio" name="willingness" value="절대 구매하지 않는다"> 절대 구매하지 않는다</label>
+                        <label><input type="radio" name="usageIntent" value="반드시 사용한다" data-usage-group="user" required> 반드시 사용한다</label>
+                        <label><input type="radio" name="usageIntent" value="사용할 의향이 있다" data-usage-group="user"> 사용할 의향이 있다</label>
+                        <label><input type="radio" name="usageIntent" value="잘 모르겠다" data-usage-group="user"> 잘 모르겠다</label>
+                        <label><input type="radio" name="usageIntent" value="사용하지 않을 것 같다" data-usage-group="user"> 사용하지 않을 것 같다</label>
+                        <label><input type="radio" name="usageIntent" value="전혀 사용하지 않는다" data-usage-group="user"> 전혀 사용하지 않는다</label>
+                    </div>
+                </div>
+
+                <div class="form-group usage-intent-branch" data-branch="non-user" hidden>
+                    <label class="form-question">Q4-2. (영양제를 미사용하실 경우) 선택하신 시안의 제품이 나온다면, 저희 제품을 사용할 의향이 있나요?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="usageIntent" value="반드시 사용한다" data-usage-group="non-user" required> 반드시 사용한다</label>
+                        <label><input type="radio" name="usageIntent" value="사용할 의향이 있다" data-usage-group="non-user"> 사용할 의향이 있다</label>
+                        <label><input type="radio" name="usageIntent" value="잘 모르겠다" data-usage-group="non-user"> 잘 모르겠다</label>
+                        <label><input type="radio" name="usageIntent" value="사용하지 않을 것 같다" data-usage-group="non-user"> 사용하지 않을 것 같다</label>
+                        <label><input type="radio" name="usageIntent" value="전혀 사용하지 않는다" data-usage-group="non-user"> 전혀 사용하지 않는다</label>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-question" for="desired-price">Q6. 어떤 가격이라면 구매하시겠어요? (원 단위로 적어주세요)</label>
-                    <input type="number" id="desired-price" name="desiredPrice" class="text-input" placeholder="예: 12000" min="0" step="500">
+                    <label class="form-question">Q5. 100ml 기준, 어느 가격대라면 구매하시겠어요? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="priceRange" value="2,000원 이상 ~ 4,000원 미만" required> 2,000원 이상 ~ 4,000원 미만</label>
+                        <label><input type="radio" name="priceRange" value="4,000원 이상 ~ 6,000원 미만"> 4,000원 이상 ~ 6,000원 미만</label>
+                        <label><input type="radio" name="priceRange" value="6,000원 이상 ~ 8,000원 미만"> 6,000원 이상 ~ 8,000원 미만</label>
+                        <label><input type="radio" name="priceRange" value="8,000원 이상 ~ 10,000원 미만"> 8,000원 이상 ~ 10,000원 미만</label>
+                        <label><input type="radio" name="priceRange" value="10,000원 이상"> 10,000원 이상</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-question">Q6. 식물 영양제를 소비한다면, 친환경적 가치는 얼마나 큰 비중을 가지나요? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ecoValueWeight" value="매우 크다" required> 매우 크다</label>
+                        <label><input type="radio" name="ecoValueWeight" value="큰 편이다"> 큰 편이다</label>
+                        <label><input type="radio" name="ecoValueWeight" value="보통이다"> 보통이다</label>
+                        <label><input type="radio" name="ecoValueWeight" value="작은 편이다"> 작은 편이다</label>
+                        <label><input type="radio" name="ecoValueWeight" value="전혀 중요하지 않다"> 전혀 중요하지 않다</label>
+                    </div>
                 </div>
 
                 <div class="form-group">
