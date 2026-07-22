@@ -1,22 +1,20 @@
 /**
  * 설문조사 폼 제출 스크립트
  *
- * 이 사이트는 정적 페이지라 서버가 없습니다. 응답을 실제로 저장하려면
- * 아래 SURVEY_ENDPOINT 에 데이터를 받아줄 주소를 넣어주세요. 가장 쉬운 방법:
- *
- * [옵션 1] Formspree (https://formspree.io) - 무료, 가입 후 폼 생성하면
- *          "https://formspree.io/f/xxxxxxxx" 형태의 주소를 줍니다.
- *          받은 주소를 SURVEY_ENDPOINT 에 그대로 넣으면 끝입니다.
- *          응답은 Formspree 대시보드/이메일로 쌓이고, 엑셀로 내려받아
- *          기프티콘 추첨에 사용하면 됩니다.
- *
- * [옵션 2] Google Apps Script 웹앱 - 구글시트에 바로 쌓고 싶다면
- *          Apps Script로 doPost(e)를 만들어 웹앱으로 배포한 주소를 넣으세요.
+ * 이 사이트는 정적 페이지라 서버가 없습니다. 구글 시트에 응답을 쌓으려면:
+ * 1) 구글 시트를 만들고 확장 프로그램 > Apps Script 에 apps-script/Code.gs 내용을 붙여넣기
+ * 2) 배포 > 새 배포 > 웹 앱으로 배포 (액세스: 모든 사용자)
+ * 3) 배포 후 나오는 주소( .../exec 로 끝남 )를 아래 SURVEY_ENDPOINT 에 붙여넣기
  *
  * SURVEY_ENDPOINT 를 비워두면 실제 전송은 하지 않고, 콘솔에 입력값만
  * 출력하는 테스트 모드로 동작합니다.
+ *
+ * 참고: Google Apps Script 웹앱은 요청 Content-Type이 application/json이면
+ * 브라우저가 먼저 보내는 preflight(OPTIONS) 요청을 Apps Script가 처리하지
+ * 못해 CORS 오류가 납니다. 그래서 아래 코드는 text/plain으로 전송하고,
+ * Code.gs 쪽에서 JSON.parse(e.postData.contents)로 읽도록 맞춰 두었습니다.
  */
-const SURVEY_ENDPOINT = ""; // TODO: 여기에 Formspree 등 제출용 주소를 입력하세요.
+const SURVEY_ENDPOINT = ""; // TODO: 여기에 Apps Script 웹앱 배포 주소(.../exec)를 입력하세요.
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("survey-form");
@@ -48,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 const response = await fetch(SURVEY_ENDPOINT, {
                     method: "POST",
-                    headers: { "Content-Type": "application/json", Accept: "application/json" },
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
                     body: JSON.stringify(payload),
                 });
 
