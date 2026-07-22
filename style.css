@@ -715,10 +715,88 @@ nav a { margin-left: 15px; font-size: 15px; }
     margin-bottom: 35px;
 }
 
-.usage-intent-branch {
-    margin-top: -15px;
-    padding-left: 22px;
-    border-left: 3px solid #cdeae3;
+/* 섹션 구분 헤더 (1 · 첫인상 ...) */
+.survey-section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 55px 0 30px 0;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #eef3f1;
+}
+
+.survey-form > .survey-section-head:first-child {
+    margin-top: 0;
+}
+
+.section-num {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background-color: #00A086;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #112a25;
+}
+
+/* 질문 보조 설명 */
+.q-help {
+    font-size: 15px;
+    color: #7a8a86;
+    line-height: 1.55;
+    margin: -8px 0 14px 0;
+}
+
+/* '선택' 태그 */
+.optional-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7a8a86;
+    background-color: #eef3f1;
+    border-radius: 20px;
+    padding: 2px 11px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+/* 친환경 정보 공개 블록 */
+.eco-reveal {
+    background-color: #eaf5f1;
+    border: 1px solid #cdeae3;
+    border-radius: 18px;
+    padding: 26px 28px;
+    margin-bottom: 35px;
+}
+
+.eco-reveal .eco-tag {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #00806b;
+    margin-bottom: 12px;
+}
+
+.eco-reveal p {
+    font-size: 17px;
+    color: #33524b;
+    line-height: 1.7;
+}
+
+.eco-reveal .eco-src {
+    font-size: 14px;
+    color: #7a8a86;
+    margin-top: 10px;
 }
 
 .form-row {

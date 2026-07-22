@@ -22,17 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const statusEl = document.getElementById("survey-status");
     const submitBtn = form.querySelector(".survey-submit-btn");
-    const usageBranches = form.querySelectorAll(".usage-intent-branch");
-
-    function showUsageBranch(branch) {
-        usageBranches.forEach((el) => {
-            el.hidden = el.dataset.branch !== branch;
-        });
-    }
-
-    form.querySelectorAll('input[name="priorUsage"]').forEach((radio) => {
-        radio.addEventListener("change", () => showUsageBranch(radio.dataset.usageBranch));
-    });
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -67,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             form.reset();
-            usageBranches.forEach((el) => { el.hidden = true; });
             setStatus("설문에 참여해주셔서 감사합니다! 추첨 결과는 입력하신 연락처로 안내드릴게요.", "success");
         } catch (error) {
             console.error("[survey] 제출 중 오류가 발생했습니다.", error);
